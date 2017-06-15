@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MdToolbarModule } from '@angular/material';
+import { MdSidenavModule, MdListModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MdToolbarModule
+    MdSidenavModule,
+    MdListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
