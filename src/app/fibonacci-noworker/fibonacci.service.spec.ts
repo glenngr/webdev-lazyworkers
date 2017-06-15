@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { FibonacciService } from './fibonacci.service';
+import { FibonacciNoWorkerService } from './fibonacci.service';
 
 describe('FibonacciService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FibonacciService]
+      providers: [FibonacciNoWorkerService]
     });
   });
 
-  it('should be created', inject([FibonacciService], (service: FibonacciService) => {
+  it('should be created', inject([FibonacciNoWorkerService], (service: FibonacciNoWorkerService) => {
     expect(service).toBeTruthy();
   }));
 });

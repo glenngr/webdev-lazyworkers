@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { FibonacciServiceInterface } from '../shared/fibonacci.service';
 
 @Injectable()
-export class FibonacciService {
+export class FibonacciNoWorkerService implements FibonacciServiceInterface {
 
   constructor() { }
   public generate(n: number): number[] {
@@ -27,7 +28,6 @@ export class FibonacciService {
     for (let i = 0; i <= n - 1; i++) {
       results.push(this.calculateNextFibonacciValue(i));
     }
-    console.log(results);
     return results;
   }
 }
