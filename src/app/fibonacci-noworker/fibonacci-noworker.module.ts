@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FibonacciNoworkerComponent } from './fibonacci-noworker/fibonacci-noworker.component';
+import { FibonacciNoworkerComponent } from './fibonacci-noworker.component';
 
 @NgModule({
   imports: [
