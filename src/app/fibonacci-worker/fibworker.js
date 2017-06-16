@@ -18,8 +18,7 @@ function calculateNextFibonacciValue(n) {
     if (n == 1) {
         s += 1;
         return (s);
-    }
-    else {
+    } else {
         return (this.calculateNextFibonacciValue(n - 1) + this.calculateNextFibonacciValue(n - 2));
     }
 }
