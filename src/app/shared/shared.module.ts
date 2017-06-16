@@ -13,7 +13,15 @@ import { GifAnimComponent } from './gif-anim/gif-anim.component';
     MdSlideToggleModule,
     FormsModule
   ],
-  exports: [FibonacciGeneratorComponent, GifAnimComponent],
+  exports: [
+    CommonModule,
+    FormsModule,
+    FibonacciGeneratorComponent,
+    GifAnimComponent,
+    MdInputModule,
+    MdListModule,
+    MdSlideToggleModule
+  ],
   declarations: [FibonacciGeneratorComponent, GifAnimComponent]
 })
 export class SharedModule { }
