@@ -1,5 +1,5 @@
 <md-input-container>
-  <input mdInput placeholder="Antall fibonacci-tall" [(ngModel)]="antallFib">
+  <input mdInput placeholder="Sequence length" [(ngModel)]="numFib">
 </md-input-container>
 <md-list>
   <md-list-item *ngFor="let fib of fibSequence$ | async">{{fib}}</md-list-item>

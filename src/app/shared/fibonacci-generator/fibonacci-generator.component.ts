@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FibService } from '../fibonacci.service';
 import { Observable } from 'rxjs/Observable';
+
+import { FibService } from '../fibonacci.service';
 
 @Component({
   selector: 'webdev-fibonacci-generator',
@@ -9,19 +10,19 @@ import { Observable } from 'rxjs/Observable';
 })
 export class FibonacciGeneratorComponent  {
   fibSequence$: Observable<number[]>;
-  private _antallFib: number;
+  private _numFib: number;
 
   constructor(private fibonacciSvc: FibService) {
     this.fibSequence$ = this.fibonacciSvc.fibSequence$;
   }
 
-  get antallFib() {
-    return this._antallFib;
+  get numFib() {
+    return this._numFib;
   }
 
-  set antallFib(value) {
-    this._antallFib = +value;
-    this.generate(this._antallFib);
+  set numFib(value) {
+    this._numFib = +value;
+    this.generate(this._numFib);
   }
 
   private generate(number: number) {
