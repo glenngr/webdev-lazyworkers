@@ -1,12 +1,20 @@
 import { Injectable } from '@angular/core';
 import { FibonacciServiceInterface } from '../shared/fibonacci.service';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class FibonacciNoWorkerService implements FibonacciServiceInterface {
+  private _fibSequence$: Subject<number[]> = new Subject<number[]>();
+
+  get fibSequence$(): Observable<number[]> {
+    return this._fibSequence$.asObservable();
+  }
 
   constructor() { }
-  public generate(n: number): number[] {
-    return this.generateFibonacciSeries(n);
+  public generate(n: number): void {
+    const result = this.generateFibonacciSeries(n);
+    this._fibSequence$.next(result);
   }
 
   private calculateNextFibonacciValue(n: number): number {

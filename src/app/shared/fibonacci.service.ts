@@ -1,9 +1,14 @@
+import { Observable } from 'rxjs/Observable';
+
 export interface FibonacciServiceInterface {
-    generate(n: number): number[];
+    fibSequence$: Observable<number[]>;
+    generate(n: number): void;
 }
 
 export class FibService implements FibonacciServiceInterface {
-    generate(n: number): number[] {
-        return [0];
+    get fibSequence$(): Observable<number[]> {
+        return Observable.create();
+    }
+    generate(n: number): void {
     }
 }
