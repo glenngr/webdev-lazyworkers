@@ -1,16 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'webdev-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  title = 'webdev';
+export class HomeComponent {
+  title = 'Webdev Sørlandet';
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }
