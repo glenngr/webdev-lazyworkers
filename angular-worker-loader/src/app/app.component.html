@@ -1,0 +1,4 @@
+  Antall fib: <input type="number" #antall (keyup.enter)="generate($event.target.value)"><img src="/assets/load.gif">
+  <ul>
+    <li *ngFor="let fib of fibnumbers">{{fib}}</li>
+  </ul>
