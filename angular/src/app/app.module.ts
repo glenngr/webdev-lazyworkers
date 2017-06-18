@@ -4,8 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { MdSidenavModule, MdListModule} from '@angular/material';
 import { SharedModule } from './shared/shared.module';
-// import { FibonacciNoworkerModule } from './fibonacci-noworker/fibonacci-noworker.module';
-// import { FibonacciWorkerModule } from './fibonacci-worker/fibonacci-worker.module';
+import { FibonacciNoworkerModule } from './fibonacci-noworker/fibonacci-noworker.module';
+import { FibonacciWorkerModule } from './fibonacci-worker/fibonacci-worker.module';
+import { HomeModule } from './home/home.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,10 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     SharedModule,
     MdSidenavModule,
-    MdListModule
+    MdListModule,
+    HomeModule,
+    FibonacciWorkerModule,
+    FibonacciNoworkerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
