@@ -10,22 +10,10 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'home'
   },
-  // {
-  //   path: 'home',
-  //   loadChildren: './home/home.module#HomeModule'
-  // },
-  // {
-  //   path: 'fibonacci-noworker',
-  //   loadChildren: './fibonacci-noworker/fibonacci-noworker.module#FibonacciNoworkerModule'
-  // },
-  // {
-  //   path: 'fibonacci-worker',
-  //   loadChildren: './fibonacci-worker/fibonacci-worker.module#FibonacciWorkerModule'
-  // },
   { path: 'home', component: HomeComponent },
   { path: 'fibonacci-noworker', component: FibonacciNoworkerComponent },
   { path: 'fibonacci-worker', component: FibonacciWorkerComponent },
-  { path: '**', pathMatch: 'full', redirectTo: '/' }
+  { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
 @NgModule({
@@ -33,3 +21,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
