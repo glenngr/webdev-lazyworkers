@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Tittel</title>
+        <meta charset="UTF-8">
+        <style>
+
+        </style>
+        <script>
+            var w;
+            if (typeof (w) == "undefined") {
+                w = new Worker("fib.js");
+            }
+            w.onmessage = function (event) {
+                var fibs = document.getElementById("fibs");
+                while (fibs.firstChild) {
+                    fibs.removeChild(fibs.firstChild);
+                }
+                for (var n of event.data) {
+                    var li = document.createElement("li");
+                    li.innerHTML = n.toString();
+                    fibs.appendChild(li);
+                }
+            };
+
+            function g(e) {
+                console.log(e);
+                w.postMessage({cmd: 'generate', msg: e});
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <section>
+            <header>
+                <h1>Overskrift</h1>
+            </header>
+        </section>
+        Antall fib: <input type="number" onkeyup="g(event.target.value)">
+        <img src="load.gif">
+        <ul id="fibs">
+        </ul>
+
+    </body>
+
+</html>
